@@ -1,6 +1,6 @@
-#### FantasyFootballBot
+# FantasyFootballBot
 
-a Reddit bot uses Reddit API to send a message to my personal Reddit account every time a player from
+A Reddit bot uses Reddit API to send a message to my personal Reddit account every time a player from
 my fantasy football team is mentioned in the fantasy football subreddit.
 
 ## How To Run
