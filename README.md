@@ -20,6 +20,6 @@ Change the values in myTeam to the players on your team.
 Run the command "python3 fantasybot.py" in Terminal
 
 ## Notes
-To run this program, you need Python 4, PRAW (pip3 install praw), and Python Requests (pip3 install requests)
+To run this program, you need Python 3, PRAW (pip3 install praw), and Python Requests (pip3 install requests)
 
 I use the time.sleep() function because the Reddit API only allows 60 requests per minute.
