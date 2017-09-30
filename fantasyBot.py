@@ -1,17 +1,16 @@
 #python fantasy football reddit bot
 
-# A Reddit bot that sends a message to my personal reddit account 
-# Created by Ayush Dwivedi (/u/kindw)
-# License: MIT License
-
-#from bs4 import BeautifulSoup
-from urllib.parse import urlparse
+# A Reddit bot that sends a message to my personal reddit account every time
+# a player from my fantasy football team is mentioned in a comment on 
+# r/fantasyfootball
+#
+# Eric Tolhurst
+# September 2017
 
 import praw
 import time
 import re
 import requests
-import bs4
 
 path = '/home/eric/Desktop/python/reddit/commented.txt'
 
@@ -20,6 +19,7 @@ myTeam = ["Aaron Rodgers", "Devonta Freeman", "Ezekiel Elliott", "Jordy Nelson",
           "Martavis Bryant", "DeSean Jackson", "Adrian Peterson", "Ted Ginn Jr.", "Eddie Lacy", 
           "Martellus Bennett", "Zeke", "Ginn Jr", "Jory", "Rodgers", "Freeman", "Crabtree"]
 
+# authenticates and returns an instance of PRAW, a Reddit API wrapper
 def authenticate():
     
     print('Authenticating...\n')
@@ -27,6 +27,8 @@ def authenticate():
     print('Authenticated as {}\n'.format(reddit.user.me()))
     return reddit
 
+# gets the 50 most recent comment in r/fantasyfootball, checks to see if
+# any of the players on myTeam are mentioned, sends message if one is
 def run_fantasybot(reddit):
     
     print("Getting recent comments...\n")
@@ -55,9 +57,6 @@ def run_fantasybot(reddit):
                     print('Already visited link...no message needed\n')
         print('Wating 1 second')    
         time.sleep(1)
-
-    print('Waiting 1 minute...\n')
-    time.sleep(60)
 
 
 def main():
